@@ -3,14 +3,14 @@ import Createlist from './Createlist';
 import Editlist from './Editlist';
 import Todolist from './Todolist';
 import Header from './Header'
-import { BrowserRouter, Route, Link } from 'react-router-dom';
+import { BrowserRouter, Route } from 'react-router-dom';
 
 
 class App extends React.Component {
   render() {
     return (
       <BrowserRouter>
-        <div>
+        <div className='ui container'>
         <Header />
           <br/>
           <Route path='/' exact component={Todolist} />

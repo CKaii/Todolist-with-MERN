@@ -1,10 +1,88 @@
 import React from 'react';
 
 class Createlist extends React.Component{
+  state = {
+    todo_description: '',
+    todo_responsible: '',
+    todo_priority: '',
+    todo_completed: false
+  }
+
+  onChangeTodoDescription(e){
+    this.setState({
+      todo_description: e.target.value
+    });
+  }
+
+  onChangeTodoResponsible(e){
+    this.setState({
+      todo_responsible: e.target.value
+    });
+  }
+
+  onChangeTodoPriority(e){
+    this.setState({
+      todo_priority: e.target.value
+    });
+  }
+
+  onSubmit(e) {
+    e.preventDefault();
+
+    console.log('Form Submitted:');
+    console.log(`Todo Description: ${this.state.todo_description}`);
+    console.log(`Todo Responsible: ${this.state.todo_responsible}`);
+    console.log(`Todo Priority: ${this.state.todo_priority}`);
+
+    this.setState({
+      todo_description: '',
+      todo_responsible: '',
+      todo_priority: '',
+      todo_completed: false
+    })
+  }
+
   render() {
     return (
       <div>
-        Create List Component
+        <h3>Create new Todo</h3>
+        <div onSubmit={this.onSubmit} className="ui form">
+          <div className="field">
+            <label>Description:</label>
+            <input
+              value={this.state.todo_description}
+              onChange={this.onChangeTodoDescription}
+              type="text"
+            />
+            <label>Responsible:</label>
+            <input
+              value={this.state.todo_responsible}
+              onChange={this.onChangeTodoResponsible}
+              type="text"
+            />
+          </div>
+          <div className="inline fields">
+            <label for="responsible">Level of Urgency:</label>
+            <div className="field">
+              <div className="ui radio checkbox">
+                <input type="radio" name="low" checked="" tabindex="0" className="hidden"/>
+                <label>Low</label>
+              </div>
+            </div>
+            <div className="field">
+              <div className="ui radio checkbox">
+                <input type="radio" name="medium" tabindex="0" className="hidden"/>
+                <label>Medium</label>
+              </div>
+            </div>
+            <div className="field">
+              <div className="ui radio checkbox">
+                <input type="radio" name="high" tabindex="0" className="hidden"/>
+                <label>High</label>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     );
   };

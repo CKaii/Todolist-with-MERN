@@ -3,7 +3,6 @@ import { Link } from 'react-router-dom'
 
 const Header = () => {
   return (
-    <div className='ui container'>
       <div class="ui menu">
         <div class="header item">
           MERN Todo List
@@ -24,7 +23,6 @@ const Header = () => {
           </Link>
         </div>
       </div>
-    </div>
   )
 }
 

@@ -1,14 +1,24 @@
-import React, { Component } from 'react';
-import Createlist from './component/Createlist';
-import Editlist from './component/Editlist';
-import Todolist from './component/Todolist';
+import React from 'react';
+import Createlist from './Createlist';
+import Editlist from './Editlist';
+import Todolist from './Todolist';
+import Header from './Header'
+import { BrowserRouter, Route, Link } from 'react-router-dom';
 
-class App extends Component {
+
+class App extends React.Component {
   render() {
     return (
-      <div>
-        My App
-      </div>
+      <BrowserRouter>
+        <div>
+        <Header />
+          <br/>
+          <Route path='/' exact component={Todolist} />
+          <Route path='/edit/:id' component={Editlist} />
+          <Route path='/create' component={Createlist} />
+          My App
+        </div>
+      </BrowserRouter>
     );
   }
 }

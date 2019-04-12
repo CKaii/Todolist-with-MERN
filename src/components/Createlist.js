@@ -5,7 +5,7 @@ class Createlist extends React.Component{
     return (
       <div>
         Create List Component
-      <div>
+      </div>
     );
   };
 };

@@ -3,8 +3,8 @@ import { Link } from 'react-router-dom'
 
 const Header = () => {
   return (
-      <div class="ui menu">
-        <div class="header item">
+      <div className="ui menu">
+        <div className="header item">
           MERN Todo List
         </div>
         <div className="item">

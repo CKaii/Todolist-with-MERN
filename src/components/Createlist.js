@@ -8,19 +8,19 @@ class Createlist extends React.Component{
     todo_completed: false
   }
 
-  onChangeTodoDescription(e){
+  onChangeTodoDescription = (e) =>{
     this.setState({
       todo_description: e.target.value
     });
   }
 
-  onChangeTodoResponsible(e){
+  onChangeTodoResponsible = (e) =>{
     this.setState({
       todo_responsible: e.target.value
     });
   }
 
-  onChangeTodoPriority(e){
+  onChangeTodoPriority = (e) =>{
     this.setState({
       todo_priority: e.target.value
     });
@@ -62,26 +62,36 @@ class Createlist extends React.Component{
             />
           </div>
           <div className="inline fields">
-            <label for="responsible">Level of Urgency:</label>
+            <label htmlFor="responsible">Level of Urgency:</label>
             <div className="field">
               <div className="ui radio checkbox">
-                <input type="radio" name="low" checked="" tabindex="0" className="hidden"/>
+                <input
+                  type="radio"
+                  name="low"
+                  defaultChecked=""
+                  tabIndex="0"
+                  className="hidden"/>
                 <label>Low</label>
               </div>
             </div>
             <div className="field">
               <div className="ui radio checkbox">
-                <input type="radio" name="medium" tabindex="0" className="hidden"/>
+                <input type="radio" name="medium" tabIndex="0" className="hidden"/>
                 <label>Medium</label>
               </div>
             </div>
             <div className="field">
               <div className="ui radio checkbox">
-                <input type="radio" name="high" tabindex="0" className="hidden"/>
+                <input type="radio" name="high" tabIndex="0" className="hidden"/>
                 <label>High</label>
               </div>
             </div>
           </div>
+        </div>
+        <div>
+          <button className="ui primary button">
+            Create Todo
+          </button>
         </div>
       </div>
     );

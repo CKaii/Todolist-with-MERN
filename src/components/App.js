@@ -16,7 +16,6 @@ class App extends React.Component {
           <Route path='/' exact component={Todolist} />
           <Route path='/edit/:id' component={Editlist} />
           <Route path='/create' component={Createlist} />
-          My App
         </div>
       </BrowserRouter>
     );

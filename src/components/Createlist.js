@@ -1,4 +1,5 @@
 import React from 'react';
+import axios from 'axios';
 
 class Createlist extends React.Component{
   state = {
@@ -8,19 +9,19 @@ class Createlist extends React.Component{
     todo_completed: false
   }
 
-  onChangeTodoDescription = (e) =>{
+  onChangeTodoDescription = (e) => {
     this.setState({
       todo_description: e.target.value
     });
   }
 
-  onChangeTodoResponsible = (e) =>{
+  onChangeTodoResponsible = (e) => {
     this.setState({
       todo_responsible: e.target.value
     });
   }
 
-  onChangeTodoPriority = (e) =>{
+  onChangeTodoPriority = (e) => {
     this.setState({
       todo_priority: e.target.value
     });
@@ -33,6 +34,16 @@ class Createlist extends React.Component{
     console.log(`Todo Description: ${this.state.todo_description}`);
     console.log(`Todo Responsible: ${this.state.todo_responsible}`);
     console.log(`Todo Priority: ${this.state.todo_priority}`);
+
+    const newTodo = {
+      todo_description: this.state.todo_description,
+      todo_responsible: this.state.todo_responsible,
+      todo_priority: this.state.todo_priority,
+      todo_completed: this.state.todo_completed
+    };
+
+    axios.post('http://localhost:3001/todos/add', newTodo)
+      .then(res => console.log(res.data));
 
     this.setState({
       todo_description: '',

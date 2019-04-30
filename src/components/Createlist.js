@@ -27,7 +27,7 @@ class Createlist extends React.Component{
     });
   }
 
-  onSubmit(e) {
+  onSubmit = (e) => {
     e.preventDefault();
 
     console.log('Form Submitted:');

@@ -29,7 +29,19 @@ class Todolist extends React.Component {
     return(
       <div>
         <h3>Todos List</h3>
-
+        <table class="ui single line table">
+          <thead>
+            <tr>
+              <th>Description</th>
+              <th>Responsible</th>
+              <th>Priority</th>
+              <th>Action</th>
+            </tr>
+          </thead>
+          <tbody>
+            {this.todoList()}
+          </tbody>
+        </table>
       </div>
     );
   };
